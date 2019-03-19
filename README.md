@@ -1,4 +1,4 @@
-# DB設計
+# DB s設計
 
 |Column|Type|Options|
 |------|----|-------|
