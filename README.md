@@ -52,7 +52,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|user_id|string|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 |chat_group_id|integer|null: false, foreign_key: true|
 
 
