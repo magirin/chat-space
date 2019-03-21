@@ -5,12 +5,12 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|name|string|null: false|
-|cradte_date|string|null: false|
-|post_image|string|null: false|
+|name|string|null: false, unique: true, index: true|
+|mail|string|null: false|
+|password|string|null: false|
 
 ### Association,
-- has_many :comments
+- has_many :posts
 - has_many :room_users
 - has_many :rooms,through: :room_users
 
@@ -20,22 +20,23 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|room_name|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|comment_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
+
 
 ### Association
-- has_many :comments
+- has_many :posts
 - has_many :room_users
 - has_many :users,through: :room_users
 
 
-# comment table
+# post table
 
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|comment|string|null: false|
+|post|string|null: false|
+|post_image|string|null: false|
+|cradted_at|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |room_id|integer|null: false, foreign_key: true|
 
