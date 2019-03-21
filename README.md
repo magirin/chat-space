@@ -26,7 +26,7 @@
 ### Association
 - belongs_to :user
 - has_many :room_comments
-- has_many :comments,through: :room_comment
+- has_many :comments,through: :room_comments
 
 
 - comment table
@@ -41,7 +41,7 @@
 ### Association
 - belongs_to :user
 - has_many :room_comments
-- has_many :rooms,through: :room_comment
+- has_many :rooms,through: :room_comments
 
 
 - room_comment table
