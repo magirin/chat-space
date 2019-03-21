@@ -19,6 +19,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
+|room_name|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |comment_id|integer|null: false, foreign_key: true|
 
