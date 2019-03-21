@@ -1,6 +1,6 @@
 # DB  設計
 
-- user table
+# user table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -11,10 +11,11 @@
 
 ### Association,
 - has_many :comments
-- has_many :rooms
+- has_many :room_users
+- has_many :rooms,through: :room_users
 
 
-- room table
+# room table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -24,12 +25,12 @@
 |comment_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :user
-- has_many :room_comments
-- has_many :comments,through: :room_comments
+- has_many :comments
+- has_many :room_users
+- has_many :users,through: :room_users
 
 
-- comment table
+# comment table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -40,18 +41,17 @@
 
 ### Association
 - belongs_to :user
-- has_many :room_comments
-- has_many :rooms,through: :room_comments
+- belongs_to :room
 
 
-- room_comment table
+# room_user table
 
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|comment_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 |room_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :comment
+- belongs_to :user
 - belongs_to :room
