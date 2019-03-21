@@ -9,7 +9,7 @@
 |cradte_date|string|null: false|
 |post_image|string|null: false|
 
-### Association
+### Association,
 - has_many :comments
 - has_many :rooms
 
