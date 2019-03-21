@@ -34,8 +34,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|post|string|null: false|
-|post_image|string|null: false|
+|content|string|null: false|
+|image|string|null: false|
 |cradted_at|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |room_id|integer|null: false, foreign_key: true|
