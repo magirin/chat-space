@@ -7,27 +7,31 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %header グループを作成しました
-    %div{class: "content_main"}
-      %div{class: "content_header"}
-        %div{class: "edit_button"} Edit
-        %p{class: "content_header_gropu"} test-group
-        %p{class: "content_header_member"} member
-      %div{class: "chat_space"}
+    %div{class: "content-main"}
+      %div{class: "content-header"}
+        %div{class: "edit-button"} Edit
+        %p{class: "content-header-group"} test-group
+        %p{class: "content-header-member"} member
+      %div{class: "chat-space"}
+        %div{class: "post"}
+          %div{class: "post-user"}test-user
+          %p{class: "date"}2019/03/24
+          %p{class: "comment"}おはよう
+      %div{class: "form"}
+        %div{class: "text-space"}
+          %p{class: "pic-image"}aa
+        %div{class: "send-button"}Send
     %div{class: "sidebar"}
-      %div{class: "user_name"} test-user
-      %div{class: "group_block"}
-        %p{class: "group_name"} test-group
-        %p{class: "latest_message"} さようなら
-      %div{class: "group_block"}
-        %p{class: "group_name"} sample-group
-        %p{class: "latest_message"} hello!
-      %div{class: "group_block"}
-        %p{class: "group_name"} example
-        %p{class: "latest_message"} まだメッセージはありません
-    %footer
-      %ul{class: "text_space"}
-        %li{class: "pic_image"}
-        %li{class: "send_button"}Send
+      %div{class: "sidebar-header"} test-user
+      %div{class: "group-block"}
+        %p{class: "group-name"} test-group
+        %p{class: "latest-message"} さようなら
+      %div{class: "group-block"}
+        %p{class: "group-name"} sample-group
+        %p{class: "latest-message"} hello!
+      %div{class: "group-block"}
+        %p{class: "group-name"} example
+        %p{class: "latest-message"} まだメッセージはありません
+
 
 

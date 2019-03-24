@@ -1,34 +1,83 @@
 @import "./reset";
+@import "./variable";
 
-header {
-  color: white;
-  text-align: center;
-  background-color: #38AEF0;
-  width: 100vw;
-  height: 20px;
-  position: fixed;
-}
-
-.content_main{
+.content-main{
   float: right;
   width: calc(100vw - 300px);
   height: 100vh;
-  padding: 20px 0 0 0;
-  .content_header{
-    height: 82px;
-    .content_header_group{
+  .content-header{
+    height: 100px;
+    .content-header-group{
+      padding: 21px 0 15px 40px;
+      box-sizing: border-box;
+      font-size: 20px;
+      color: #333333;
+    }
+    .content-header-member{
+      padding: 0 0 0 40px;
+      font-size: 12px;
+      color: #999999;
 
     }
-    .content_header_member{
-
-    }
-    .edit_button{
+    .edit-button{
       float: right;
       padding: 0 20px;
-      margin: 28px 0 0 0;
+      margin: 30px 20px 0 0;
       height: 40px;
+      border: 1px;
+      border-style: solid;
+      border-color: $header-color;
+      color: $header-color;
+      line-height: 40px;
     }
   }
+
+  .chat-space{
+    background-color: #fafafa;
+    height: calc(100vh - 100px);
+
+    .post{
+      padding: 46px 0 40px 40px;
+      .post-user{
+        float:left;
+        padding-right: 10px;
+      }
+      .date{
+        font-size: 12px;
+        color: #999999;
+      }
+      .comment{
+
+      }
+    }
+  }
+
+    .form{
+  width: calc(100vw - 300px);
+  height: 80px;
+  background-color: gray;
+  position: absolute;
+  bottom: 0;
+
+  .text-space{
+    margin: 15px 0 0 40px;
+    background-color: white;
+    height: 50px;
+    width: calc(100vw - 505px);
+    color: #434a54;
+    display: inline-block;
+  }
+  .send-button{
+    margin: 15px 40px 0 0;
+    height: 50px;
+    width: 90px;
+    line-height: 50px;
+    text-align: center;
+    background-color: $header-color;
+    color: white;
+    float: right;
+   }
+}
 }
 
 
@@ -36,10 +85,10 @@ header {
   width: 300px;
   height: 100vh;
   background-color: #2f3e51;
-  padding: 20px 0 0 0;
+  float: left;
 
-  .user_name {
-    height: 82px;
+  .sidebar-header {
+    height: 100px;
     background-color: #253141;
     color: white;
     font-size: 16px;
@@ -48,19 +97,19 @@ header {
     padding: 0 0 0 20px;
   }
 
-  .group_block {
+  .group-block {
     height:31px;
     box-sizing: content-box;
     padding: 20px 20px 40px 20px;
 
 
-    .group_name {
+    .group-name {
       padding: 0 0 5px 0;
       font-size: 15px;
       font-weight: bold;
       color: #ffffff;
     }
-    .latest_message {
+    .latest-message {
       padding: 0 0 5px 0;
       font-size: 11px;
       font-weight: bold;
@@ -68,4 +117,6 @@ header {
     }
   }
 }
+
+
 
