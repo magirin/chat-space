@@ -9,8 +9,7 @@
   .content-header{
     height: 100px;
     .content-header-group{
-      padding: 21px 0 15px 40px;
-      box-sizing: border-box;
+      padding: 34px 0 15px 40px;
       font-size: 20px;
       color: #333333;
     }
@@ -53,32 +52,43 @@
     }
   }
 
-    .form{
-  width: calc(100vw - 300px);
-  height: 80px;
-  background-color: gray;
-  position: absolute;
-  bottom: 0;
+  .form{
+      width: calc(100vw - 300px);
+      height: 80px;
+      background-color: gray;
+      position: absolute;
+      bottom: 0;
 
-  .text-space{
-    margin: 15px 0 0 40px;
-    background-color: white;
-    height: 50px;
-    width: calc(100vw - 505px);
-    color: #434a54;
-    display: inline-block;
+    .text-space{
+      margin: 15px 0 0 40px;
+      background-color: white;
+      height: 50px;
+      width: calc(100vw - 505px);
+      color: #434a54;
+      display: inline-block;
+      line-height: 50px;
+        .placeholder{
+          font-size: 16px;
+          color: #434a54;
+          float: left;
+          margin-left: 10px;
+        }
+        .fa fa-image{
+          margin-right: 10px;
+          float: right;
+        }
+    }
+    .send-button{
+      margin: 15px 40px 0 0;
+      height: 50px;
+      width: 90px;
+      line-height: 50px;
+      text-align: center;
+      background-color: $header-color;
+      color: white;
+      float: right;
+     }
   }
-  .send-button{
-    margin: 15px 40px 0 0;
-    height: 50px;
-    width: 90px;
-    line-height: 50px;
-    text-align: center;
-    background-color: $header-color;
-    color: white;
-    float: right;
-   }
-}
 }
 
 
@@ -94,7 +104,7 @@
     color: white;
     font-size: 16px;
     font-weight: bold;
-    line-height: 82px;
+    line-height: 100px;
     padding: 0 0 0 20px;
     .sidebar-icon{
       float: right;
