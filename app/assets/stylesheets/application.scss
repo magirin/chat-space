@@ -41,13 +41,15 @@
       .post-user{
         float:left;
         padding-right: 10px;
+        @include user-name();
+        color: #999999;
       }
       .date{
         font-size: 12px;
         color: #999999;
       }
       .comment{
-
+        padding-top: 10px;
       }
     }
   }
@@ -55,7 +57,7 @@
   .form{
       width: calc(100vw - 300px);
       height: 80px;
-      background-color: gray;
+      background-color: #ddd;
       position: absolute;
       bottom: 0;
 
@@ -73,8 +75,8 @@
           float: left;
           margin-left: 10px;
         }
-        .fa fa-image{
-          margin-right: 10px;
+        .image-icon{
+          margin: 8px 10px 0 0;
           float: right;
         }
     }
@@ -102,8 +104,7 @@
     height: 100px;
     background-color: #253141;
     color: white;
-    font-size: 16px;
-    font-weight: bold;
+    @include user-name();
     line-height: 100px;
     padding: 0 0 0 20px;
     .sidebar-icon{

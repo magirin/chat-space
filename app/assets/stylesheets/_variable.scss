@@ -1,1 +1,5 @@
 $header-color: #38AEF0;
+@mixin user-name($fSize: 16px, $fWeight: bold){
+  font-weight: $fWeight;
+  font-size: $fSize;
+}
