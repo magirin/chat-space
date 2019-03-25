@@ -54,7 +54,7 @@
     }
   }
 
-  .form{
+  .form-box{
       width: calc(100vw - 300px);
       height: 80px;
       background-color: #ddd;
@@ -69,12 +69,7 @@
       color: #434a54;
       display: inline-block;
       line-height: 50px;
-        .placeholder{
-          font-size: 16px;
-          color: #434a54;
-          float: left;
-          margin-left: 10px;
-        }
+
         .image-icon{
           margin: 8px 10px 0 0;
           float: right;
