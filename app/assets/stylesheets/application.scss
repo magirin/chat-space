@@ -34,7 +34,7 @@
 
   .chat-space{
     background-color: #fafafa;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 200px);
 
     .post{
       padding: 46px 0 40px 40px;
@@ -58,33 +58,39 @@
       width: calc(100vw - 300px);
       height: 80px;
       background-color: #ddd;
-      position: absolute;
       bottom: 0;
+      padding-top: 20px;
+      position: relative;
 
-    .text-space{
-      margin: 15px 0 0 40px;
-      background-color: white;
-      height: 50px;
-      width: calc(100vw - 505px);
-      color: #434a54;
-      display: inline-block;
-      line-height: 50px;
+      .text-space{
+        position: absolute;
+        left: 40px;
+        background-color: white;
+        color: #434a54;
+        line-height: 50px;
+        display: inline-block;
+        padding-left: 10px;
+        width: calc(100vw - 500px);
+      }
 
-        .image-icon{
-          margin: 8px 10px 0 0;
-          float: right;
+      .image-move{
+        position: absolute;
+        top: 35px;
+        right: 160px;
+        display: inline-block;
         }
-    }
-    .send-button{
-      margin: 15px 40px 0 0;
-      height: 50px;
-      width: 90px;
-      line-height: 50px;
-      text-align: center;
-      background-color: $header-color;
-      color: white;
-      float: right;
-     }
+
+
+      .send-button{
+        margin-right: 40px;
+        width: 90px;
+        line-height: 50px;
+        text-align: center;
+        background-color: $header-color;
+        color: white;
+        float: right;
+        display: inline-block;
+       }
   }
 }
 

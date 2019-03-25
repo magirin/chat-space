@@ -1,4 +1,4 @@
-!!!
+<!DOCTYPE html>
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
@@ -17,10 +17,12 @@
           %div{class: "post-user"}test-user
           %p{class: "date"}2019/03/20(Wed) 20:11:23
           %p{class: "comment"}おはよう
-      %div{class: "form-box"}
-        %input{class: "text-space",type: "text", placeholder: "type a message", name: "message"}
+
+      %form{class: "form-box"}
+        %input{class: "text-space",type: "text", placeholder: "type a message", name: "message", id: "image"}
+        %label{id: "image", class: "image-move"}
           =fa_icon "image", class: 'image-icon'
-        %div{class: "send-button"}Send
+        %input{class: "send-button", type: "submit", value: "SENT"}
     %div{class: "sidebar"}
       %div{class: "sidebar-header"}
         test-user
