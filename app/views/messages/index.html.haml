@@ -7,16 +7,16 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %div{class: "content-main"}
+    %div{class: "content"}
       %div{class: "content-header"}
-        %div{class: "edit-button"} Edit
-        %p{class: "content-header-group"} test-group
-        %p{class: "content-header-member"} member
-      %div{class: "chat-space"}
-        %div{class: "post"}
-          %div{class: "post-user"}test-user
-          %p{class: "date"}2019/03/20(Wed) 20:11:23
-          %p{class: "comment"}おはよう
+        %div{class: "content-header__edit-button"} Edit
+        %p{class: "content-header__group"} test-group
+        %p{class: "content-header__member"} member
+      %div{class: "chatspace"}
+        %div{class: "chatspace-post"}
+          %div{class: "chatspace-post__user"}test-user
+          %p{class: "chatspace-post__date"}2019/03/20(Wed) 20:11:23
+          %p{class: "chatspace-post__comment"}おはよう
 
       %form{class: "form-box"}
         %input{class: "text-space",type: "text", placeholder: "type a message", name: "message", id: "image"}

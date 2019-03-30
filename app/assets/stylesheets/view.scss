@@ -1,21 +1,21 @@
-.content-main{
+.content{
   float: right;
   width: calc(100vw - 300px);
   height: 100vh;
-  .content-header{
+  .content__header{
     height: 100px;
-    .content-header-group{
+    .header__group{
       padding: 34px 0 15px 40px;
       font-size: 20px;
       color: #333333;
     }
-    .content-header-member{
+    .header__member{
       padding: 0 0 0 40px;
       font-size: 12px;
       color: #999999;
 
     }
-    .edit-button{
+    .header__edit-button{
       float: right;
       padding: 0 20px;
       margin: 30px 20px 0 0;
