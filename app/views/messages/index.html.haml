@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ChatSpace
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    %div{class: "content-main"}
+      %div{class: "content-header"}
+        %div{class: "edit-button"} Edit
+        %p{class: "content-header-group"} test-group
+        %p{class: "content-header-member"} member
+      %div{class: "chat-space"}
+        %div{class: "post"}
+          %div{class: "post-user"}test-user
+          %p{class: "date"}2019/03/20(Wed) 20:11:23
+          %p{class: "comment"}おはよう
+
+      %form{class: "form-box"}
+        %input{class: "text-space",type: "text", placeholder: "type a message", name: "message", id: "image"}
+        %label{id: "image", class: "image-move"}
+          =fa_icon "image", class: 'image-icon'
+        %input{class: "send-button", type: "submit", value: "SENT", name: "submit"}
+    %div{class: "sidebar"}
+      %div{class: "sidebar-header"}
+        test-user
+        %div{class: "sidebar-icon"}
+          =fa_icon "pencil-square-o", class: 'edit-icon'
+          %i{class: "fa fa-cog"}
+      %div{class: "group-block"}
+        %p{class: "group-name"} test-group
+        %p{class: "latest-message"} さようなら
+      %div{class: "group-block"}
+        %p{class: "group-name"} sample-group
+        %p{class: "latest-message"} hello!
+      %div{class: "group-block"}
+        %p{class: "group-name"} example
+        %p{class: "latest-message"} まだメッセージはありません
