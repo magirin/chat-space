@@ -78,8 +78,8 @@
 
       &__image-icon{
         position: absolute;
-        top: 35px;
-        right: 160px;
+        top: 20px;
+        right: 80px;
         display: inline-block;
         }
 
@@ -115,7 +115,9 @@
     .sidebar-icon{
       float: right;
       display: inline-block;
-      margin-right: 20px;
+      margin-right: 10px;
+      height: 100px;
+      line-height: 100px;
    }
   }
 
