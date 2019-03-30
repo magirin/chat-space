@@ -1,0 +1,31 @@
+.content
+  .content-header
+    .content-header__edit-button Edit
+    %p{class: "content-header__group"} test-group
+    %p{class: "content-header__member"} member
+  .chatspace
+    .chatspace-post
+      .chatspace-post__user"test-user
+      %p{class: "chatspace-post__date"}2019/03/20(Wed) 20:11:23
+      %p{class: "chatspace-post__comment"}おはよう
+
+  %form{class: "form-box"}
+    %input{class: "form-box__text-space",type: "text", placeholder: "type a message", name: "message", id: "image"}
+    %label{id: "image", class: "form-box__image-icon"}
+      =fa_icon "image", class: 'form-box__image-icon'
+    %input{class: "form-box__send-button", type: "submit", value: "SENT", name: "submit"}
+.sidebar
+  .sidebar-header
+    test-user
+    .sidebar-icon
+      =fa_icon "pencil-square-o", class: 'sidebar-icon'
+      %i{class: "sidebar-icon fa fa-cog"}
+  .group-block
+    %p{class: "group-block__name"} test-group
+    %p{class: "group-block__latest-message"} さようなら
+  .group-block
+    %p{class: "group-block__name"} sample-group
+    %p{class: "group-block__latest-message"} hello!
+  .group-block
+    %p{class: "group-block__name"} example
+    %p{class: "group-block__latest-message"} まだメッセージはありません
