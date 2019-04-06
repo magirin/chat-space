@@ -9,11 +9,14 @@
       %p{class: "chatspace-post__date"}2019/03/20(Wed) 20:11:23
       %p{class: "chatspace-post__comment"}おはよう
 
-  %form{class: "form-box"}
-    %input{class: "form-box__text-space",type: "text", placeholder: "type a message", name: "message", id: "image"}
-    %label{id: "image", class: "form-box__image-icon"}
-      =fa_icon "image", class: 'form-box__image-icon'
-    %input{class: "form-box__send-button", type: "submit", value: "SENT", name: "submit"}
+  .form
+    = form_for [@group, @message] do |f|
+      =f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        =f.label :image, class: 'form__mask__image' do
+          =fa_icon 'picture-o', class: 'icon'
+          =f.file_field :image, class; 'hidden'
+        =f.submit 'Send', class: 'form__submit'
 .sidebar
   .sidebar-header
     test-user
