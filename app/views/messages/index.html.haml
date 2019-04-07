@@ -4,10 +4,7 @@
     %p{class: "content-header__group"} test-group
     %p{class: "content-header__member"} member
   .chatspace
-    .chatspace-post
-      .chatspace-post__user"test-user
-      %p{class: "chatspace-post__date"}2019/03/20(Wed) 20:11:23
-      %p{class: "chatspace-post__comment"}おはよう
+    = render partial: 'message', collection: @messages
 
   .form
     = form_for [@group, @message] do |f|
