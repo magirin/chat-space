@@ -1,32 +1,23 @@
 .content
   .content-header
-    .content-header__edit-button Edit
-    %p{class: "content-header__group"} test-group
-    %p{class: "content-header__member"} member
+    .content-header__edit-button
+      = link_to "Edit", edit_group_path(@group)
+    %p{class: "content-header__group"}
+      = @group.name
+    %p{class: "content-header__member"}
+      - @group.users.each do |user|
+        = user.name
   .chatspace
     = render partial: 'message', collection: @messages
 
   .form
     = form_for [@group, @message] do |f|
-      =f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      = f.text_field :content, class: 'form__message', placeholder: ' type a message'
       .form__mask
-        =f.label :image, class: 'form__mask__image' do
-          =fa_icon 'picture-o', class: 'icon'
-          =f.file_field :image, class: 'hidden'
-        =f.submit 'Send', class: 'form__submit'
+        = f.label :image, class: 'form__mask__image' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
 .sidebar
-  .sidebar-header
-    test-user
-    .sidebar-icon
-      = link_to new_group_path do
-        %i{class: "sidebar-icon fa fa-pencil-square-o"}
-      %i{class: "sidebar-icon fa fa-cog"}
-  .group-block
-    %p{class: "group-block__name"} test-group
-    %p{class: "group-block__latest-message"} さようなら
-  .group-block
-    %p{class: "group-block__name"} sample-group
-    %p{class: "group-block__latest-message"} hello!
-  .group-block
-    %p{class: "group-block__name"} example
-    %p{class: "group-block__latest-message"} まだメッセージはありません
+  .wrapper
+  = render 'devise/shared/side_bar'

@@ -1,10 +1,10 @@
 .chatspace-post
-      .chatspace-post__user
-        = message.user.name
-      %p{class: "chatspace-post__date"}
-        = message.createed_at.strftime("%Y/%m/%d %H: %M")
+  .chatspace-post__user
+    = message.user.name
+  %p{class: "chatspace-post__date"}
+    = message.created_at.strftime("%Y/%m/%d %H: %M")
+  %p{class: "chatspace-post__comment"}
+    -if message.content.present?
       %p{class: "chatspace-post__comment"}
-        -if message.content.present?
-          %p{class: "chatspace-post__comment"}
-            =message.content
-        = image_tag message.image.url,class: 'lower-message__image' if message.image.present?
+        =message.content
+    = image_tag message.image.url,class: 'lower-message__image' if message.image.present?

@@ -60,3 +60,10 @@ gem 'rails-i18n'
 gem 'carrierwave'
 gem "mini_magick"
 gem 'pry-rails'
+gem 'rspec-rails'
+gem 'factory_bot'
+gem 'rails-controller-testing'
+
+group :test do
+  gem 'faker'
+end
