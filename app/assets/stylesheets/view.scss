@@ -33,6 +33,7 @@
 
   .chatspace{
     background-color: #fafafa;
+    overflow: scroll;
     height: calc(100vh - 200px);
 
     .chatspace-post{
@@ -99,7 +100,7 @@
   .form {
     background-color: #DDDDDD;
     box-sizing: border-box;
-    height: 90px;
+    height: 100px;
     padding: 20px 50px 20px 40px;
     &__message {
       border: none;
