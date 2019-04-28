@@ -1,11 +1,9 @@
 $(function(){
     function buildHTML(message){
-        var imageurl = '';
+        var imageUrl = '';
         if (message.image) {
-          imageurl = `<img class="lower-message__image" src="#{message.image}"></img>`;
+          imageUrl = `<img class="lower-message__image" src="${message.image}"></img>`;
         }
-
-        
 
         var html = `<div class="chatspace-post">
                         <div class="chatspace-post__user">
@@ -18,20 +16,16 @@ $(function(){
                             ${message.content}
                         </div>
                         <div class = "lower-message__image">
-                            ${message.image}
+                            ${imageUrl}
                         </div>
                     </div>`;
         return html;
     };
 
-    function scrollBottom(){
-        var target = $('.chatspace-post__comment').last();
-        console.log(target)
-        var position = target.offset().top + $('.chatspace-post__comment').scrollTop();
-        $('.chatspace-post__comment').animate({
-          scrollTop: position
-        }, 300, 'swing');
-      };
+    function scrollBottom() {
+        $('.chatspace').animate({scrollTop: $('.chatspace')[0].scrollHeight}, 'fast')
+    }
+
 
     $('#new_message').on('submit', function(e){
         e.preventDefault();
