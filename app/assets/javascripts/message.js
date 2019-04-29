@@ -40,7 +40,6 @@ $(function(){
 
         .done(function(data){
             var html = buildHTML(data);
-            console.log(html)
             $('.chatspace').append(html);
             $('#message_content').val('');
             scrollBottom();
