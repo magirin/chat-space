@@ -41,7 +41,6 @@ $(function(){
         .done(function(data){
             var html = buildHTML(data);
             $('.chatspace').append(html);
-            $('#message_content').val('');
             $('form').get(0).reset();
             scrollBottom();
         })
