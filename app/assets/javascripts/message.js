@@ -1,10 +1,7 @@
 $(function(){
     function buildHTML(message){
-        var imageUrl = '';
-        if (message.image) {
-          imageUrl = `<img class="lower-message__image" src="${message.image}"></img>`;
-        }
-
+        var imageUrlcode = message.image
+        var imageAppier = (message.image == null)  ?  '' : '<img class="lower-message__image" src= '+ imageUrlcode +' >';
         var html = `<div class="chatspace-post">
                         <div class="chatspace-post__user">
                             ${message.name}
@@ -16,7 +13,7 @@ $(function(){
                             ${message.content}
                         </div>
                         <div class = "lower-message__image">
-                            ${imageUrl}
+                            ${imageAppier}
                         </div>
                     </div>`;
         return html;
@@ -43,6 +40,7 @@ $(function(){
 
         .done(function(data){
             var html = buildHTML(data);
+            console.log(html)
             $('.chatspace').append(html);
             $('#message_content').val('');
             scrollBottom();
