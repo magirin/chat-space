@@ -1,23 +1,2 @@
--# .content
-  -# .content-header
-    -# .content-header__edit-button Edit
-    -# %p{class: "content-header__group"} test-group
-    -# %p{class: "content-header__member"}
-    -#   = current_user.name
-  -# .chatspace
-  -#   .chatspace-post
-  -#     .chatspace-post__user test-user
-  -#     %p{class: "chatspace-post__date"}2019/03/20(Wed) 20:11:23
-  -#     %p{class: "chatspace-post__comment"}おはよう
-
-  -# .form
-  -#   = form_for [@group, @message] do |f|
-  -#     = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-  -#     .form__mask
-  -#       = f.label :image, class: 'form__mask__image' do
-  -#         = fa_icon 'picture-o', class: 'icon'
-  -#         = f.file_field :image, class: 'hidden'
-  -#     = f.submit 'Send', class: 'form__submit'
-
 .wrapper
   = render 'devise/shared/side_bar'
