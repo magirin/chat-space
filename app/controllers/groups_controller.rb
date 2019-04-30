@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:edit, :update]
-  before_action :authenticate_user! #もしエラーが出るなら取り急ぎfilterのしよう
+  before_action :authenticate_user! 
 
 
   def index
@@ -22,6 +22,7 @@ class GroupsController < ApplicationController
   end
 
   def edit
+    @groups = Group.all
   end
 
   def update

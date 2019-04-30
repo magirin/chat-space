@@ -12,14 +12,11 @@ class UsersController < ApplicationController
   end
 
   def index
-    @user = User.all
-    # if @user
-    #   respond_to do |format|
-    #     format.html 
-    #     format.json
-    #   end
-    #   # flash[:notice] = 'メッセージが送信されました'
-    # end
+    @users = User.where('title LIKE(?)', "%#{params[:keyword]}%")
+      respond_to do |format|
+        format.html 
+        format.json
+      end
   end
 
 
