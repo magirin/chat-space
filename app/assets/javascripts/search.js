@@ -14,10 +14,8 @@ $('#user-search-field').keyup(function(){
     $.ajax({
         url: '/users',
         type: "GET",
-        data: {keyword: input},
+        data: {searchWord: input},
         dataType: 'json',
-        processData: false,
-        contentType: false
     })
 
     .done(function(data){
