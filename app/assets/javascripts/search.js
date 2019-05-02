@@ -48,7 +48,6 @@ $(function(){
             $(this).parent().remove();
             $('#chat-group-users').append(html);
             var userId = $(".user-search-delete").data('user-id');
-            console.log(userId)
             $('#group_user_ids').val(userId)
         });
         $(document).on("click", '.user-search-delete', function() {
