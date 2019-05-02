@@ -10,6 +10,7 @@ $(function(){
     function deleteUser(name, id){
         var html = `<div class="chat-group-user clearfix">
                     <p class="chat-group-user__name">${name}</p>
+                    <input type="hidden" name="group[user_ids][]" value="${id}">
                     <div class="user-search-delete chat-group-user__btn chat-group-user__btn--delete" data-user-id=${id} data-user-name=${name}>削除</div>
                     </div>`
         return html;
@@ -38,7 +39,7 @@ $(function(){
             alert('失敗');
         })
     });
-
+    
     $(function(){
         $(document).on("click", ".user-search-add", function(){
             var name = $(this).attr("data-user-name");
@@ -46,16 +47,13 @@ $(function(){
             var html = deleteUser(name, id)
             $(this).parent().remove();
             $('#chat-group-users').append(html);
+            var userId = $(".user-search-delete").data('user-id');
+            console.log(userId)
+            $('#group_user_ids').val(userId)
         });
         $(document).on("click", '.user-search-delete', function() {
             $(this).parent().remove();
-          });
-    })
+        });
 
-    $(function(){
-        $('chat-group-form__action-btn').on('submit', function(){
-            var user_id= $('data-user-id')
-
-        })
     })
 })
