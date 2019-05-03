@@ -2,14 +2,14 @@ $(function(){
     function buildHTML(message){
         var imageUrlcode = message.image
         var imageAppier = (message.image == null)  ?  '' : '<img class="lower-message__image" src= '+ imageUrlcode +' >';
-        var html = `<div class="chatspace-post">
+        var html = `<div class="chatspace-post" data-message-id= ${message.id}>
                         <div class="chatspace-post__user">
                             ${message.name}
                         </div>
                         <div class = "chatspace-post__date">
                             ${message.created_at}
                         </div>
-                        <div class = "chatspace-post__comment">
+                        <div class = "chatspace-post__comment" >
                             ${message.content}
                         </div>
                         <div class = "lower-message__image">
