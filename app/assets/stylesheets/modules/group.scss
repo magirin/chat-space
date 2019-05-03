@@ -77,11 +77,18 @@
     }
   }
 
+  #chat-group-users {
+    float: right;
+    width: 143%;
+  }
+
   .chat-group-user {
     padding: 0 15px;
     line-height: 50px;
     font-size: 14px;
     border-bottom: 1px solid #ddd;
+    float: right;
+    width: 67%;
     &:after {
       content: "";
       clear: both;
@@ -101,7 +108,7 @@
         color: #38aef0;
       }
 
-      &.chat-group-user__btn--remove {
+      &.chat-group-user__btn--delete {
         color: #f05050;
       }
     }

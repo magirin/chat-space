@@ -22,7 +22,6 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @groups = Group.all
   end
 
   def update
