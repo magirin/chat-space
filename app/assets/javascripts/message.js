@@ -21,8 +21,35 @@ $(function(){
 
     function scrollBottom() {
         $('.chatspace').animate({scrollTop: $('.chatspace')[0].scrollHeight}, 'fast')
-    }
+    };
 
+
+    var reloadMessages = function() {
+        var last_message_id = $(".chatspace-post:last").data("message-id");
+        //ajaxのurl部分に必要なurlの作成
+        var $url = location.href.split("/");  
+        var $group_id = $url[$url.length -2];  
+        var url2= "/groups/" + $group_id + "/api/messages";
+
+        $.ajax({
+          url: url2,
+          type: "GET",
+          dataType: 'json',
+          data: {id: last_message_id}
+        })
+
+        .done(function(data) {
+            var insertHTML = '';
+            data.forEach(function(message) {
+                insertHTML = buildHTML(message);
+            });
+            $('.chatspace').append(insertHTML);
+            scrollBottom()
+        })
+        .fail(function() {
+            console.log('自動更新が失敗しました')
+        });
+    };
 
     $('#new_message').on('submit', function(e){
         e.preventDefault();
@@ -52,5 +79,6 @@ $(function(){
         .always(() => {
             $(".form__submit").removeAttr("disabled");
         });
-    })
-})
+    });
+    setInterval(reloadMessages, 2000);
+});
