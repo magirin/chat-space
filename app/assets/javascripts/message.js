@@ -47,7 +47,7 @@ $(function(){
             scrollBottom()
         })
         .fail(function() {
-            console.log('自動更新が失敗しました')
+            alert('自動更新が失敗しました')
         });
     };
 
