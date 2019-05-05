@@ -29,10 +29,10 @@ $(function(){
         //ajaxのurl部分に必要なurlの作成
         var $url = location.href.split("/");  
         var $group_id = $url[$url.length -2];  
-        var url2= "/groups/" + $group_id + "/api/messages";
+        var autoLoad_url= "/groups/" + $group_id + "/api/messages";
 
         $.ajax({
-          url: url2,
+          url: autoLoad_url,
           type: "GET",
           dataType: 'json',
           data: {id: last_message_id}
