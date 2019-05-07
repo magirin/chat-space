@@ -25,30 +25,32 @@ $(function(){
 
 
     var reloadMessages = function() {
-        var last_message_id = $(".chatspace-post:last").data("message-id");
-        //ajaxのurl部分に必要なurlの作成
-        var $url = location.href.split("/");  
-        var $group_id = $url[$url.length -2];  
-        var autoLoad_url= "/groups/" + $group_id + "/api/messages";
+        if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+            var last_message_id = $(".chatspace-post:last").data("message-id");
+            var $url = location.href.split("/");  
+            var $group_id = $url[$url.length -2];  
+            var autoLoad_url= "/groups/" + $group_id + "/api/messages";
 
-        $.ajax({
-          url: autoLoad_url,
-          type: "GET",
-          dataType: 'json',
-          data: {id: last_message_id}
-        })
+            $.ajax({
+            url: autoLoad_url,
+            type: "GET",
+            dataType: 'json',
+            data: {id: last_message_id}
+            })
 
-        .done(function(data) {
-            var insertHTML = '';
-            data.forEach(function(message) {
-            　　insertHTML = buildHTML(message);
+            .done(function(data) {
+                var insertHTML = '';
+                data.forEach(function(message) {
+                　　insertHTML = buildHTML(message);
+                })
+                $('.chatspace').append(insertHTML);
+                scrollBottom()
+            })
+
+            .fail(function() {
+                alert('自動更新が失敗しました')
             });
-            $('.chatspace').append(insertHTML);
-            scrollBottom()
-        })
-        .fail(function() {
-            alert('自動更新が失敗しました')
-        });
+        };
     };
 
     $('#new_message').on('submit', function(e){
@@ -73,7 +75,7 @@ $(function(){
         })
 
         .fail(function(){
-            alert('メッセージが選択されてないですよ');
+            alert('メッセージが選択されていません');
         })
 
         .always(() => {
