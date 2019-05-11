@@ -297,6 +297,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   erb2haml
+  excon (~> 0.64.0)
   factory_bot
   faker
   fog-aws
