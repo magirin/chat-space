@@ -69,7 +69,7 @@ gem 'font-awesome-rails'
 gem 'devise'
 gem 'rails-i18n'
 gem 'carrierwave'
-gem 'fog-aws'
+gem 'fog'
 gem "mini_magick"
 gem 'pry-rails'
 gem 'rspec-rails'
