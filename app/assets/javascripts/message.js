@@ -41,7 +41,7 @@ $(function(){
             .done(function(data) {
                 var insertHTML = '';
                 data.forEach(function(message) {
-                　　insertHTML = buildHTML(message);
+                insertHTML = buildHTML(message);
                 })
                 $('.chatspace').append(insertHTML);
                 scrollBottom()
