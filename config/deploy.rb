@@ -47,8 +47,8 @@ set :rbenv_ruby, '2.3.1'
 set :ssh_options, auth_methods: ['publickey'],
                   keys: ['~/.ssh/password.pem'] 
 
-set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
-set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
+set :unicorn_pid, -> { "#{shared_path}/chat-space/tmp/pids/unicorn.pid" }
+set :unicorn_config_path, -> { "#{current_path}/chat-space/config/unicorn.rb" }
 set :keep_releases, 5
 
 after 'deploy:publishing', 'deploy:restart'
