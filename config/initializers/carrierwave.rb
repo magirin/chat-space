@@ -11,8 +11,7 @@ CarrierWave.configure do |config|
     aws_secret_access_key: Rails.application.secrets.aws_secret_access_key,
     region: 'ap-northeast-1'
   }
-
+  storage :fog
   config.fog_directory  = 'chatspace-pix'
   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/chatspace-pix'
 end
-storage :fog
