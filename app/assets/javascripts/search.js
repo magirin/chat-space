@@ -19,8 +19,9 @@ $(function(){
 
 
     $('#user-search-field').keyup(function(){
+        var preWord;
         var input = $("#user-search-field").val();
-
+        if (input !== preWord && input.length !== 0){
         $.ajax({
             url: '/users',
             type: "GET",
@@ -31,13 +32,21 @@ $(function(){
         .done(function(data){
                 Array.from(data).forEach(function(idvdata){
                 var html = addUser(idvdata)
-                $('#user_search_result').append(html);
+                setTimeout(function(){
+                    if ($('.resultAvoid').val() !== idvdata.id){
+                    $('#user_search_result').append(html);
+                    }
+                },120)
+            console.log($('.resultAvoid').val())
             });
         })
 
         .fail(function(){
             alert('失敗');
         })
+    }
+    preWord = input
+    $('#user_search_result').empty();
     });
     
     $(function(){
@@ -56,3 +65,6 @@ $(function(){
 
     })
 })
+
+
+
