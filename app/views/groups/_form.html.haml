@@ -38,11 +38,6 @@
                 =user.name
                 .user-search-delete.chat-group-user__btn.chat-group-user__btn--delete 削除
                 %input{name: "group[user_ids][]", value: "#{user.id}",type: "hidden"}
-        - @group.users.each do |user|
-          - ids = 0
-          - ids += user.id
-          %input.resultAvoid{name: "ids", value: ids, type: "hidden"}
-
       #member_search_result
         
 
