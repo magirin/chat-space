@@ -9,7 +9,6 @@ class MessagesController < ApplicationController
   end
 
   def create
-    # binding.pry
     @message = @group.messages.new(message_params)
     @message.user = current_user
     if @message.save

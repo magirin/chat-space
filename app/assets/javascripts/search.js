@@ -15,7 +15,7 @@ $(function(){
                     </div>`
         return html;
     };
-
+    
 
 
     $('#user-search-field').keyup(function(){
@@ -37,7 +37,6 @@ $(function(){
                     $('#user_search_result').append(html);
                     }
                 },120)
-            console.log($('.resultAvoid').val())
             });
         })
 

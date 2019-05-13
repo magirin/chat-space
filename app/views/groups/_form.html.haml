@@ -31,6 +31,10 @@
           #chat_group_user_22.chat_group_user.clearfix
             =current_user.name
             %input{name: "group[user_ids][]", type: "hidden", value: "#{current_user.id}"}
+        -# -@group.users.each do |user|
+        -#   - ids = []
+        -#   - ids << user.id
+        -#   %input{name: "ids", value: "#{ids}", id: "users_ids"}
         - @group.users.each do |user|
           - if current_user != user
             .chat-group-user.clearfix{id: "chat-group-member-#{user.id}"}
@@ -45,4 +49,3 @@
     .chat-group-form__field--left
     .chat-group-form__field--right
       = f.submit class: 'chat-group-form__action-btn'
-      - binding.pry
