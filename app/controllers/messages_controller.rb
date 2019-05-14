@@ -10,6 +10,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = @group.messages.new(message_params)
+    # binding.pry
     @message.user = current_user
     if @message.save
       flash[:notice] = 'メッセージが送信されました'
