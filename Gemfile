@@ -76,6 +76,7 @@ gem 'rspec-rails'
 gem 'factory_bot'
 gem 'rails-controller-testing'
 gem 'excon', '~> 0.64.0'
+gem 'dotenv-rails'
 
 group :test do
   gem 'faker'
