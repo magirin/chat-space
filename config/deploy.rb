@@ -72,7 +72,7 @@ end
 
 set :default_env, {
   rbenv_root: "/usr/local/rbenv",
-  path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
-  AWS_ACCESS_KEY_ID: ENV["ID"],
+  path: "/usr/projects/chat-space/.env",
+  AWS_ACCESS_KEY_ID: ENV['ID'],
   AWS_SECRET_ACCESS_KEY: ENV["KEY"]
 }
