@@ -1,0 +1,11 @@
+.chatspace-post{ data: { message_id: message.id  } }
+  .chatspace-post__user
+    = message.user.name
+  .chatspace-post__date
+    = message.created_at.strftime("%Y/%m/%d %H: %M")
+  .chatspace-post__comment
+    -if message.content.present?
+      .chatspace-post__comment
+        =message.content
+    = image_tag message.image, class: 'lower-message__image' if message.image.present?
+    

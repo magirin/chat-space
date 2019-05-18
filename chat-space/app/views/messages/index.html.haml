@@ -1,0 +1,23 @@
+.content
+  .content-header
+    .content-header__edit-button
+      = link_to "Edit", edit_group_path(@group)
+    %p{class: "content-header__group"}
+      = @group.name
+    %p{class: "content-header__member"}
+      - @group.users.each do |user|
+        = user.name
+  .chatspace
+    = render partial: 'message', collection: @messages
+
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: ' type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
+.sidebar
+  .wrapper
+  = render 'devise/shared/side_bar'
