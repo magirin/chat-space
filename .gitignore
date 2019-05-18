@@ -19,4 +19,4 @@
 public/uploads/*
 config/secrets.yml
 .env
-deploy.rb
+config/deploy.rb
