@@ -15,7 +15,7 @@ $(function(){
                     </div>`
         return html;
     };
-    
+
 
 
     $('#user-search-field').keyup(function(){
@@ -29,7 +29,9 @@ $(function(){
             dataType: 'json',
         })
 
+
         .done(function(data){
+            console.log(data)
                 Array.from(data).forEach(function(idvdata){
                 var html = addUser(idvdata)
                 setTimeout(function(){
@@ -47,7 +49,7 @@ $(function(){
     preWord = input
     $('#user_search_result').empty();
     });
-    
+
     $(function(){
         $(document).on("click", ".user-search-add", function(){
             var name = $(this).attr("data-user-name");

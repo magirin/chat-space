@@ -82,5 +82,5 @@ $(function(){
             $(".form__submit").removeAttr("disabled");
         });
     });
-    // setInterval(reloadMessages, 2000);
+    setInterval(reloadMessages, 2000);
 });
